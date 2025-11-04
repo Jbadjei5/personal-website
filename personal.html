@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jerome Agyei Boakye - Web Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="container">
+        <h3 class="header-logo">Jerome.dev</h3>
+        <nav>
+          <a href="about.html" class="nav-link">About </a>
+          <a href="contact.html" class="nav-link">Contact </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1>Jerome Agyei Boakye</h1>
+          <p class="tagline">Web Developer & Designer</p>
+          <p class="intro">I create beautiful, responsive websites and web applications with a focus on user experience and clean code.</p>
+        </div>
+        
+        <div class="profile-image">
+          <div class="image-container">
+            <img src="images/MY PHOTO.jpg"  class="profile-photo">
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section class="skills-section">
+        <h2>Skills & Technologies</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Frontend</h3>
+            <ul>
+              <li>HTML5 & CSS3</li>
+              <li>JavaScript (ES6+)</li>
+              <li>React.js</li>
+              <li>Responsive Design</li>
+            </ul>
+          </div>
+<div class="skill-category">
+            <h3>Tools</h3>
+            <ul>
+              <li>JSX</li>
+              <li>VS Code</li>
+              <li>React Hooks</li>
+              <li>CSS in JS</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="social-links">
+          <a href="https://github.com/jbadjei5" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:jeromeagyei5@gmail.com" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+        <p class="copyright">&copy; <span id="current-year">2025</span> Jerome Agyei Boakye. All rights reserved.</p>
+      </div>
+    </footer>
+
+  <script>
+    // Update copyright year
+    document.getElementById('2025').textContent = new Date().getFullYear();
+    
+    // Add active class to current page link
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentPage = window.location.pathname.split('/').pop() || 'personal.html';
+      document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+  <!-- Particles Background -->
+  <div class="particles" id="particles-js"></div>
+
+
+  <script>
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Simple fade-in animation for work items
+    const workItems = document.querySelectorAll('.work-item');
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    workItems.forEach(item => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      item.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      observer.observe(item);
+    });
+
+    // Add hover effect for work items
+    workItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        item.style.transform = 'translateY(-5px)';
+      });
+      
+      item.addEventListener('mouseleave', () => {
+        item.style.transform = 'translateY(0)';
+      });
+    });
+  </script>
+</body>
+</html>
